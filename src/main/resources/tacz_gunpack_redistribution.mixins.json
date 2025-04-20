@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.chloeprime.taczgunpackredistribution.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "tacz_gunpack_redistribution.refmap.json",
+  "mixins": [
+    "GunPackLoaderAccessor",
+    "MixinGunPackLoader"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
