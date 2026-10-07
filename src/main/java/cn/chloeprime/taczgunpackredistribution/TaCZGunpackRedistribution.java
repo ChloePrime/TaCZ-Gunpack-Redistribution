@@ -1,13 +1,12 @@
 package cn.chloeprime.taczgunpackredistribution;
 
 import cn.chloeprime.taczgunpackredistribution.mixin.GunPackLoaderAccessor;
-import com.mojang.logging.LogUtils;
-import com.tacz.guns.GunMod;
 import com.tacz.guns.resource.GunPackLoader;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -21,7 +20,7 @@ import java.util.zip.ZipFile;
 @Mod(TaCZGunpackRedistribution.MODID)
 public class TaCZGunpackRedistribution {
     public static final String MODID = "tacz_gunpack_redistribution";
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     /**
      * CurseForge download gunpacks to `mods` folder now,
@@ -50,7 +49,7 @@ public class TaCZGunpackRedistribution {
                 }
             }
         } catch (IOException e) {
-            GunMod.LOGGER.error(GunPackLoaderAccessor.getMarker(),"Failed to scan extensions from {}. Error: {}", extensionsPath, e);
+            LOGGER.error(GunPackLoaderAccessor.getMarker(),"Failed to scan extensions from {}. Error: {}", extensionsPath, e);
         }
 
         return gunPacks;
