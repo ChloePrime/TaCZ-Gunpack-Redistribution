@@ -23,6 +23,16 @@ public class TaCZGunpackRedistribution {
     public static final String MODID = "tacz_gunpack_redistribution";
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    /**
+     * CurseForge download gunpacks to `mods` folder now,
+     * so we add it to search candidates.
+     */
+    public static final List<String> CANDIDATES_PATHS = List.of(new String[] {
+            "mods",
+            "resourcepacks",
+            "shaderpacks",
+    });
+
     public static List<GunPackLoader.GunPack> scanPotentialExtensions(Path extensionsPath) {
         List<GunPackLoader.GunPack> gunPacks = new ArrayList<>();
 
