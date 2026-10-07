@@ -4,10 +4,11 @@ import cn.chloeprime.taczgunpackredistribution.mixin.GunPackLoaderAccessor;
 import com.mojang.logging.LogUtils;
 import com.tacz.guns.GunMod;
 import com.tacz.guns.resource.GunPackLoader;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import org.slf4j.Logger;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.ModContainer;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -60,7 +61,7 @@ public class TaCZGunpackRedistribution {
         }
     }
 
-    public TaCZGunpackRedistribution() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    public TaCZGunpackRedistribution(IEventBus ignoredModBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 }

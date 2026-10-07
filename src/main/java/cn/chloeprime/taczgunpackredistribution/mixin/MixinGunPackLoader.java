@@ -4,7 +4,7 @@ import cn.chloeprime.taczgunpackredistribution.TaCZGunpackRedistribution;
 import com.google.common.collect.Iterables;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.tacz.guns.resource.GunPackLoader;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
